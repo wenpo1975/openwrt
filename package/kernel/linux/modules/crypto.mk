@@ -57,6 +57,17 @@ endef
 $(eval $(call KernelPackage,crypto-arc4))
 
 
+define KernelPackage/crypto-aes
+  TITLE:=AES cipher CryptoAPI module
+  KCONFIG:=CONFIG_CRYPTO_AES
+  FILES:=$(LINUX_DIR)/crypto/aes_generic.ko
+  AUTOLOAD:=$(call AutoLoad,09,aes_generic)
+  $(call AddDepends/crypto)
+endef
+
+$(eval $(call KernelPackage,crypto-aes))
+
+
 define KernelPackage/crypto-authenc
   TITLE:=Combined mode wrapper for IPsec
   DEPENDS:=+kmod-crypto-manager +kmod-crypto-null
@@ -617,6 +628,23 @@ define KernelPackage/crypto-pcompress
 endef
 
 $(eval $(call KernelPackage,crypto-pcompress))
+
+
+define KernelPackage/crypto-qcrypto
+  TITLE:=QTI crypto CE engine
+  KCONFIG:= \
+	CONFIG_CRYPTO_DEV_QCRYPTO \
+	CONFIG_CRYPTO_DEV_QCEDEV
+  FILES:= \
+	$(LINUX_DIR)/drivers/crypto/msm/qcrypto.ko \
+	$(LINUX_DIR)/drivers/crypto/msm/qcedev.ko
+  AUTOLOAD:=$(call AutoLoad,09,qcrypto)
+  DEPENDS:=+kmod-crypto-aes +kmod-crypto-des \
+	+kmod-crypto-hash +kmod-crypto-manager
+  $(call AddDepends/crypto)
+endef
+
+$(eval $(call KernelPackage,crypto-qcrypto))
 
 
 define KernelPackage/crypto-rsa
