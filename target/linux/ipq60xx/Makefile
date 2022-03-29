@@ -18,6 +18,6 @@ DEFAULT_PACKAGES += \
 	kmod-qca-nss-dp kmod-qca-nss-drv kmod-qca-ssdk \
 	qca-ssdk-shell \
 	nss-firmware-ipq6018 \
-	kmod-qca-nss-drv-pppoe uboot-envtools
+	kmod-qca-nss-drv-pppoe kmod-qca-nss-ecm uboot-envtools
 
 $(eval $(call BuildTarget))
