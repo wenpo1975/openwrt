@@ -4,9 +4,8 @@
 
 Tips:
 1. 推荐使用main分支，其他分支不保证正常使用。  
-2. 没有专门校准文件的设备（除glinet ax1800/axt1800，360v6以外）默认没有WiFi，  
-	如需要WiFi请在Firmware--->ath11k Board-Specific Overrides选择一个不适配的校准文件。
-3. 本源码不保证可以编译任意IPK，IPK功能及编译方面的问题，如非我修改源码所导致请自行解决。  
+2. 默认没有WiFi，如果你需要使用WiFi建议使用QSDK。  
+3. 本源码不保证可以编译任意IPK，IPK功能及编译方面的问题请自行解决。  
 
 ## 注意
 
@@ -69,5 +68,3 @@ Tips:
 7. 编译完成后输出路径：bin/targets
 
 本套代码不保证所有IPK可以编译成功。
-
-你可以自由使用，但源码编译二次发布请注明 [lean 的  GitHub 仓库](https://github.com/coolsnowwolf/lede)
