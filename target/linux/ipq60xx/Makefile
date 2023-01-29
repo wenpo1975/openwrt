@@ -16,7 +16,7 @@ include $(INCLUDE_DIR)/target.mk
 DEFAULT_PACKAGES += \
 	kmod-leds-gpio kmod-gpio-button-hotplug swconfig \
 	kmod-qca-nss-dp kmod-qca-nss-drv kmod-qca-ssdk \
-	qca-ssdk-shell \
+	qca-ssdk-shell kmod-qca-nss-drv-bridge-mgr \
 	nss-firmware-ipq6018 \
 	kmod-qca-nss-drv-pppoe kmod-qca-nss-ecm uboot-envtools
 
